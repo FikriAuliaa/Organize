@@ -179,29 +179,37 @@ const HomePage = () => {
               </Alert>
             )}
 
-            <Grid container spacing={3}>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  sm: "repeat(2, 1fr)",
+                },
+                gap: 3,
+                width: "100%",
+              }}
+            >
               {loading ? (
                 Array.from(new Array(4)).map((_, index) => (
-                  <Grid xs={12} sm={6} key={index}>
-                    <Skeleton
-                      variant="rectangular"
-                      height={300}
-                      sx={{ borderRadius: 2 }}
-                    />
-                  </Grid>
+                  <Skeleton
+                    key={index}
+                    variant="rectangular"
+                    height={300}
+                    sx={{ borderRadius: 2, width: "100%" }}
+                  />
                 ))
               ) : events.length === 0 ? (
-                <Grid xs={12}>
-                  <Alert severity="info">Tidak ada acara yang ditemukan.</Alert>
-                </Grid>
+                <Alert severity="info" sx={{ gridColumn: "1 / -1" }}>
+                  Tidak ada acara yang ditemukan.
+                </Alert>
               ) : (
                 events.map((event) => (
-                  <Grid xs={12} sm={6} key={event._id}>
-                    <EventCard event={event} />
-                  </Grid>
+                  <EventCard key={event._id} event={event} />
                 ))
               )}
-            </Grid>
+            </Box>
+
             {!loading && pages > 1 && (
               <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
                 <Pagination
