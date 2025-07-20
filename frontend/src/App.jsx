@@ -4,7 +4,7 @@ import { useAuth } from "./hooks/useAuth";
 
 // Impor Komponen Layout & Header
 import Header from "./components/Header";
-import Navbar from "./components/landing/navbar";
+import Navbar from "./components/landing/Navbar";
 import Footer from "./components/landing/Footer";
 
 // Impor Semua Halaman
