@@ -24,6 +24,7 @@ import {
   Stack,
   Link,
 } from "@mui/material";
+import { ArrowBack } from "@mui/icons-material";
 
 const EventDetailPage = () => {
   const { id } = useParams();
@@ -203,6 +204,13 @@ const EventDetailPage = () => {
 
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
+      <Button
+        startIcon={<ArrowBack />}
+        onClick={() => navigate(-1)}
+        sx={{ mb: 2 }}
+      >
+        Kembali
+      </Button>
       <Paper elevation={3} sx={{ p: { xs: 2, sm: 4 }, borderRadius: 2 }}>
         <Typography variant="h3" component="h1" gutterBottom fontWeight="bold">
           {event.title}

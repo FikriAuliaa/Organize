@@ -29,7 +29,7 @@ const Header = () => {
           Organize
         </Typography>
         <Box>
-          <Button component={Link} to="/" color="inherit">
+          <Button component={Link} to="/home" color="inherit">
             Home
           </Button>
           {userInfo ? (

@@ -65,7 +65,7 @@ const Features = () => {
             component="h2"
             sx={{ mb: 3, fontWeight: "bold" }}
           >
-            Mengapa Memilih EventKita?
+            Mengapa Memilih Organize?
           </Typography>
           <Typography
             variant="h6"
